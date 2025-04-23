@@ -5,8 +5,7 @@ import streamlit as st
 
 
 load_dotenv()
-openai.api_key = os.getenv("OPENAI_API_KEY")
-
+openai.api_key = st.secrets["OPENAI_API_KEY"]
 def query_openai_json(prompt):
     try:
         response = openai.ChatCompletion.create(
